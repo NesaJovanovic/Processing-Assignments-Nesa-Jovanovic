@@ -3,23 +3,26 @@ float y = 0;
 float z = 0;
 
 void setup(){
-  size(400,800);
-  background(0);
+  size(800,800);
+  background(255);
   colorMode(HSB,255,255,255);
   noStroke();
 }
 
 void draw(){
   x = 10;
-  y = 10;
-  z = z + .10;
-  while(x <= mouseX){
-    while(y <= mouseY){
-      ellipse(x,10,10,10);
-      ellipse(x,y,10,10);
-      ellipse(10,y,10,10);
-      x = x + 15;
-      y = y +15;
+  while(x <= width){
+    x = x + 15;
+    y = 0;
+    while(y <= width){
+      y = y + 15;
+      if(x < mouseX && y < mouseY){
+        fill(x % 200, y, 200);
+        ellipse(x,y,10,10);
+      } else {
+        fill(255);
+        ellipse(x,y,10,10);
+      }
     }
   }
 }
