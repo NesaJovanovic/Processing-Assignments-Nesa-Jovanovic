@@ -11,15 +11,14 @@ void setup(){
 
 void draw(){
   x = 10;
-  y = 10;
-  z = z + .10;
-  while(x <= mouseX){
-    while(y <= mouseY){
-      ellipse(x,10,10,10);
+  while(x <= width){
+    x = x + 15;
+    y = 0;
+    while(y <= width){
+      y = y + 15;
+      if(x < mouseX && y < mouseY){
       ellipse(x,y,10,10);
-      ellipse(10,y,10,10);
-      x = x + 15;
-      y = y +15;
+      }
     }
   }
 }
