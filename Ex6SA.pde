@@ -3,7 +3,7 @@ float y = 0;
 float z = 0;
 
 void setup(){
-  size(800,800);
+  size(400,800);
   background(255);
   colorMode(HSB,255,255,255);
   noStroke();
@@ -14,7 +14,7 @@ void draw(){
   while(x <= width){
     x = x + 15;
     y = 0;
-    while(y <= width){
+    while(y <= height){
       y = y + 15;
       if(x < mouseX && y < mouseY){
         fill(x % 200, y, 200);
