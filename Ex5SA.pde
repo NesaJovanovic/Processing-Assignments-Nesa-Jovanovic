@@ -1,25 +1,28 @@
 float x = 0;
 float y = 0;
-float r = 0;
-float g = 0;
+float z = 0;
 
 void setup(){
-  size(400,800);
-  background(0);
+  size(800,800);
+  background(255);
+  colorMode(HSB,255,255,255);
   noStroke();
-  colorMode(HSB,150,200,150);
 }
 
 void draw(){
-  x = x + .15;
-  y = y + 5;
-  r += 1;
-  g += 5;
-  
- fill( x % 150, y, 100);
- ellipse(x, y, 50, 50);
- if(y == 800) {
-   y = 0;
-   x += 20 ;
- }
+  x = 10;
+  while(x <= width){
+    x = x + 15;
+    y = 0;
+    while(y <= width){
+      y = y + 15;
+      if(x < mouseX && y < mouseY){
+        fill(x % 200, y, 200);
+        ellipse(x,y,10,10);
+      } else {
+        fill(255);
+        ellipse(x,y,10,10);
+      }
+    }
+  }
 }
