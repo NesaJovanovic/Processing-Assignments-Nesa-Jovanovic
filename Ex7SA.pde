@@ -2,7 +2,7 @@ void setup(){
   size(400,800);
   background(255);
   noStroke();
-  colorMode(HSB,400,150,150);
+  colorMode(HSB,355,50,50);
 }
 
 float x = 0;
