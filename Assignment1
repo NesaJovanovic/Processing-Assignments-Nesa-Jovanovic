@@ -1,6 +1,12 @@
-String myText = "Input Your Answer";
-int screen = 0;
-int input = 0;
+String Answer = ""; // answer...
+float Part1Float = 0; // used for the random number for the first half of addition
+float Part2Float = 0; // used for the random number for the second half of addiftion
+int Part1Int = 0; // the int for the first half of addition
+int Part2Int = 0; // the int for the seecond half of addition
+int screen = 0; // displays certain things depending on the screen
+int input = 0; // the input for your answer
+int StopMath = 0; // stop generating numbers in the math question
+int StopGame = 0; // stop generating circels in the game
 
 
 
@@ -17,11 +23,28 @@ void draw() {
     text("Choose: Press M for Math or G for Game", 150, 200);
   }
   if (screen == 1){
-    text("Math Question", 260, 200);
-    text(myText,50,50);
+    if(StopMath == 0){
+      Part1Float = random(5.1);
+      Part2Float= random(5.1);
+      Part1Int = int(Part1Float * 10);
+      Part2Int= int(Part2Float *10);
+      StopMath = 1;
+    }
+    text("Input Your Answer",50,50);
+    text(Answer,50,100);
+    text("=",150,100);
+    text(Part1Int,175,100);
+    text("+",225,100);
+    text(Part2Int,250,100);
+    text("Press H to go back to menu",50,550);
+    
   }
   if (screen == 2){
+    if(StopGame == 0){
+     ellipse(50,50,50,50); 
+    }
    text("Game", 260, 200); 
+   
   }
 }
 void keyPressed(){
@@ -38,23 +61,24 @@ void keyPressed(){
 if(screen == 1){
   if(key == 'h'){
     screen = 0;
+    if(key == 'a'){
+   
+    }
   }else{
     if(key == '1' ||key == '2'|| key == '3' || key == '4'|| key == '5' || key == '6' || key == '7' || key == '8' || key == '9' || key == '0' || key == BACKSPACE){
    if (keyCode == BACKSPACE) {
-    if (myText.length() > 0) {
-      myText = myText.substring(0, myText.length()-1);
+    if (Answer.length() > 0) {
+      Answer = Answer.substring(0, Answer.length()-1);
     }
-  } else if (keyCode == DELETE) {
-    myText = "";
   } else if (keyCode != SHIFT) {
-      myText = myText + key;
-  } 
+      Answer = Answer + key;
   }
+   }
   }
  }
-if(screen ==2){
+if(screen == 2){
  if(key == 'h'){
-    screen =0;
+    screen = 0;
    }
  }
 }
