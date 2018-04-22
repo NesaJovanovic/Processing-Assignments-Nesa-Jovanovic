@@ -6,7 +6,7 @@ int Part2Int = 0; // the int for the seecond half of addition
 int screen = 0; // displays certain things depending on the screen
 int input = 0; // the input for your answer
 int StopMath = 0; // stop generating numbers in the math question
-int StopGame = 0; // stop generating circels in the game
+int StopGame = 0; // stop generating circles in the game
 
 
 
