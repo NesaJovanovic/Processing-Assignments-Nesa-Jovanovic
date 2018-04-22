@@ -30,6 +30,8 @@ void draw() {
     text("Choose: Press M for Math or G for Game", 150, 200);
     text("High Score Math =", 150, 350);
     text(HighScoreMath,400,350);
+    text("High Score Game =",150,400);
+    text(HighScoreGame,400,400);
   }
   if (screen == 1){
     if(StopMath == 0){
@@ -82,7 +84,10 @@ void keyPressed(){
 if(screen == 1){
   if(key == 'h' || key == 'H'){
     screen = 0;
-
+    if(HighScoreMath < CorrectAnswer){
+     HighScoreMath = CorrectAnswer; 
+    }
+    CorrectAnswer = 0;
   }else{
     if(key == '1' || key == '2'|| key == '3' || key == '4'|| key == '5' || key == '6' || key == '7' || key == '8' || key == '9' || key == '0' || key == BACKSPACE){
    if (keyCode == BACKSPACE) {
@@ -109,6 +114,10 @@ if(screen == 1){
 if(screen == 2){
  if(key == 'h' || key == 'H'){
     screen = 0;
+    if(HighScoreGame < Score){
+     HighScoreGame = Score;
+    }
+    Score = 0;
  }
 }
 }
