@@ -27,6 +27,7 @@ void setup() {
 void draw() {
  background(0);
   if (screen == 0) {
+    fill(255);
     text("Choose: Press M for Math or G for Game", 150, 200);
     text("High Score Math =", 150, 350);
     text(HighScoreMath,400,350);
@@ -34,6 +35,7 @@ void draw() {
     text(HighScoreGame,400,400);
   }
   if (screen == 1){
+    fill(255);
     if(StopMath == 0){
       Part1Float = random(5.1);
       Part2Float= random(5.1);
@@ -55,6 +57,7 @@ void draw() {
     
   }
   if (screen == 2){
+    fill(255);
     if(StopGame == 0){
       CircleXFloat = random(80.1);
       CircleYFloat= random(52.6);
@@ -62,12 +65,12 @@ void draw() {
       CircleYInt= int(CircleYFloat *10);
       StopGame = 1;
     }
-    ellipse(CircleXInt,CircleYInt,50,50);
     text("Click on the circle to gain points.",50,50);
     text("Press H to go back to menu",50,550);
     text("Your scrore =",525,550);
     text(Score,710,550);
-   
+    fill(random(255),random(255),random(255));
+    ellipse(CircleXInt,CircleYInt,50,50);
   }
 }
 void keyPressed(){
