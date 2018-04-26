@@ -67,7 +67,7 @@ void draw() {
     }
     text("Click on the circle to gain points.",50,50);
     text("Press H to go back to menu",50,550);
-    text("Your scrore =",525,550);
+    text("Your score =",525,550);
     text(Score,710,550);
     fill(random(255),random(255),random(255));
     ellipse(CircleXInt,CircleYInt,50,50);
@@ -108,10 +108,12 @@ if(screen == 1){
        if(input == Part1Int + Part2Int){
          StopMath = 0;
          CorrectAnswer = CorrectAnswer + 1;
+         AnswerInput = "";
        }
        if(input != Part1Int + Part2Int){
           StopMath = 0;
           WrongAnswer = WrongAnswer + 1;
+          AnswerInput = "";
        }
   }
 }
