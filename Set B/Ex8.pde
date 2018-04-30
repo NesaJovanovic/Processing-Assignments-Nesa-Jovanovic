@@ -140,3 +140,6 @@ void mousePressed(){
     }
   }
 }
+void background(){
+ background(0); 
+}
